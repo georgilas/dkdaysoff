@@ -15,9 +15,10 @@
 <body>
   <main class="container" mv-app="daysoff" mv-storage="https://github.com/georgilas/data">
     <h1>Days off</h1>
-    <p>Normal leave remaining: <strong>[25-sum(filter(dur,type="n"))]</strong></p>
-    <p>Special leave remaining: <strong>[6-sum(filter(dur,type="s"))]</strong></p>
-    <p>Medical leave: <strong>[sum(filter(dur,type="m"))]</strong></p>
+    <p>Normal leave remaining: <strong>[25-sum(filter(dur,type="normal"))]</strong></p>
+    <p>Special leave remaining: <strong>[6-sum(filter(dur,type="special"))]</strong></p>
+    <p>Medical leave: <strong>[sum(filter(dur,type="medical"))]</strong></p>
+    <p>Strike: <strong>[sum(filter(dur,type="strike"))]</strong></p>
     <hr>
     <div class="card text-white bg-info mb-3" property="leave" mv-multiple>
       <div class="card-body">
@@ -38,9 +39,10 @@
           <div class="form-group">
             <label for="type">Type of leave</label>
             <select class="form-control" id="type" property>
-              <option value="n">normal</option>
-              <option value="s">special</option>
-              <option value="m">medical</option>
+              <option value="normal">normal</option>
+              <option value="special">special</option>
+              <option value="medical">medical</option>
+              <option value="strike">medical</option>
             </select>
           </div>
         </form>
