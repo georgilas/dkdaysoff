@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>dk-daysoff</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://get.mavo.io/mavo.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  <script src="https://get.mavo.io/mavo.js"></script>
+</head>
+<body>
+  <main class="container" mv-app="daysoff" mv-storage="https://github.com/georgilas/data">
+    <h1>Days off</h1>
+    <p>Normal leave remaining: <strong>[25-sum(filter(dur,type="n"))]</strong></p>
+    <p>Special leave remaining: <strong>[6-sum(filter(dur,type="s"))]</strong></p>
+    <p>Medical leave: <strong>[sum(filter(dur,type="m"))]</strong></p>
+    <hr>
+    <div class="card text-white bg-info mb-3" property="leave" mv-multiple>
+      <div class="card-body">
+        <h5 class="card-title">Leave Details</h5>
+        <form>
+          <div class="form-group">
+            <label for="starts">Leave starts on</label>
+            <input type="date" class="form-control" id="starts" property>
+          </div>
+          <div class="form-group">
+            <label for="ends">Leave ends on</label>
+            <input type="date" class="form-control" id="ends" property>
+          </div>
+          <div class="form-group">
+            <label for="dur">How many days</label>
+            <input type="number" min="1" step="1" class="form-control" id="dur" property>
+          </div>
+          <div class="form-group">
+            <label for="type">Type of leave</label>
+            <select class="form-control" id="type" property>
+              <option value="n">normal</option>
+              <option value="s">special</option>
+              <option value="m">medical</option>
+            </select>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
