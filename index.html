@@ -14,7 +14,7 @@
 </head>
 <body>
   <main class="container" mv-app="daysoff" mv-storage="https://github.com/georgilas/data">
-    <h1>Days off</h1>
+    <div class="mv-bar mv-ui pl-3 text-white bg-info" style="background: #000">Days off</div>
     <p>Normal leave remaining: <strong>[25-sum(filter(dur,type="normal"))]</strong></p>
     <p>Special leave remaining: <strong>[6-sum(filter(dur,type="special"))]</strong></p>
     <p>Medical leave: <strong>[sum(filter(dur,type="medical"))]</strong></p>
